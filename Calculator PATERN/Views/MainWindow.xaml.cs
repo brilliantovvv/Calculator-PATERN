@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calculator_PATERN.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,14 +24,15 @@ namespace Calculator_PATERN
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainViewModel();
         }
 
-        private void Button_Click_Sum(object sender, RoutedEventArgs e)
-        {
-            var a = int.Parse(TextBoxA.Text);
-            var b = int.Parse(TextBoxB.Text);
-            TextBoxSum.Text = (a + b).ToString();
-        }
+        //private void Button_Click_Sum(object sender, RoutedEventArgs e)
+        //{
+        //    var a = int.Parse(TextBoxA.Text);
+        //    var b = int.Parse(TextBoxB.Text);
+        //    TextBoxSum.Text = (a + b).ToString();
+        //}
 
     }
 }

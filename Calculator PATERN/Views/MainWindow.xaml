@@ -1,0 +1,51 @@
+﻿<Window x:Class="Calculator_PATERN.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Калькулятор" 
+        Height="250" 
+        MaxHeight="250"
+        MinHeight="250"
+        Width="300"
+        MaxWidth="300"
+        MinWidth="300">
+
+
+    <Grid>
+        <StackPanel Width="230" HorizontalAlignment="Center" Margin="20">
+            <TextBlock Text="Калькулятор"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                    <TextBlock Text="A" Width="12"  />
+                    <TextBox Text="{Binding ValueA}" Width="120" />
+                    <Button Command="{Binding A1Plus}" Content="+" Width="25" />
+                    <Button Command="{Binding A1Minus}" Content="-" Width="25" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="5">
+                <TextBlock Text="B" Width="12"  />
+                <TextBox Text="{Binding ValueB}" Width="120" />
+                <Button Command="{Binding B1Plus}" Content="+" Width="25" />
+                <Button Command="{Binding B1Minus}" Content="-" Width="25" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+                <TextBlock Text="Результат" Width="55"  />
+                <TextBox Text="{Binding Result}" Width="127" />
+            </StackPanel>
+
+            <!--<TextBox Text="{Binding Path=ValueA, Mode=TwoWay}"/>-->
+           
+            <!--<TextBox Text="{Binding Path=ValueB, Mode=TwoWay}"/>-->
+            <StackPanel Margin="24,0,24,0">
+                <TextBlock Text="Рассчитать"/>
+                <Button Content="Сумма" Command="{Binding Sum}" />
+                <Button Content="Вычитание" Command="{Binding Subtraction}" />
+            </StackPanel>
+
+        </StackPanel>
+        
+
+
+    </Grid>
+
+</Window>
