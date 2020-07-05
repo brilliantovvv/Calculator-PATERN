@@ -3,8 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:Calculator_PATERN.ViewModels;assembly=Calculator_PATERN"
-        xmlns:cmd="clr-namespace:Calculator_PATERN.Infrastructure.Commands;assembly=Calculator_PATERN"
+        
         xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         
@@ -16,12 +15,16 @@
         Width="300"
         MaxWidth="300"
         MinWidth="300">
+    
+    <!--Закоментировали проблемное место-->
+    <!--xmlns:vm="clr-namespace:Calculator_PATERN.ViewModels;assembly=Calculator PATERN"
+        xmlns:cmd="clr-namespace:Calculator_PATERN.Infrastructure.Commands;assembly=Calculator PATERN"
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
     <Window.Resources>
         <cmd:CloseApplicationCommand x:Key="CAC"/>
-    </Window.Resources>
+    </Window.Resources>-->
 
 
     <Grid>
@@ -61,7 +64,10 @@
                     </Button.Command>
                 </Button>-->
                 <!--ЛУЧШИЙ вариант реализации вызова команды через отдельный класс-->
-                <Button Command="{StaticResource ResourceKey=CAC}">
+
+
+                <!--Исправили проблемную кнопку от балды)))-->
+                <Button Command="{Binding Path=Sum}">
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="_500Px" Height="18" Margin="0,0,5,0"/>
                         <TextBlock Text="Выход"/>

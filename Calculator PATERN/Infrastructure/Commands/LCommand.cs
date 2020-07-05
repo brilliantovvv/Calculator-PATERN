@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Calculator_PATERN.Infrastructure.Commands
 {
     // Наследуюемся от базового класса команд
-   class LCommand : BaseCommand
+    public class LCommand : BaseCommand
     {
         // поля РЕДОНЛИ немного ускоряют процесс
         private readonly  Action<object> _Execute;
