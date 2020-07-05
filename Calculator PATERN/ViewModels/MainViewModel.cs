@@ -1,23 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Calculator_PATERN.ViewModels.Base;
 using System.Windows.Input;
 
 namespace Calculator_PATERN.ViewModels
 {
-    public class MainViewModel : INotifyPropertyChanged
+    internal class MainViewModel : BaseViewModel
     {
 
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
 
         #region Calculator
 
@@ -32,17 +20,6 @@ namespace Calculator_PATERN.ViewModels
                 //OnPropertyChanged("ValueA");
                 //OnPropertyChanged(nameof("ValueA"));
             }
-        }
-
-        protected virtual bool Set <T> (ref T field, T value, [CallerMemberName] string prop= null)
-        {
-            if (Equals(field,value))
-            {
-                return false;
-            }
-            field = value;
-            OnPropertyChanged(prop);
-            return true;
         }
 
         private int _ValueB;

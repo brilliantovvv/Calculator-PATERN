@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Calculator_PATERN.ViewModels
@@ -19,7 +15,7 @@ namespace Calculator_PATERN.ViewModels
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public FuncButton(Action <object> excute, Func <object, bool> canExecute=null)
+        public FuncButton(Action<object> excute, Func<object, bool> canExecute = null)
         {
             this.excute = excute;
             this.canExecute = canExecute;
