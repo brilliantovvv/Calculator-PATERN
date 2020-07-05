@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Calculator_PATERN.ViewModels"
         xmlns:cmd="clr-namespace:Calculator_PATERN.Infrastructure.Commands"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
         mc:Ignorable="d"
         Title="Калькулятор" 
         Height="270" 
@@ -58,7 +59,13 @@
                     </Button.Command>
                 </Button>-->
                 <!--ЛУЧШИЙ вариант реализации вызова команды через отдельный класс-->
-                <Button Content="ВЫХОД" Command="{StaticResource ResourceKey=CAC}" />
+                <Button Command="{StaticResource ResourceKey=CAC}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="_500Px" Height="18" Margin="0,0,5,0"/>
+                        <TextBlock Text="Выход"/>
+                    </StackPanel>
+                    
+                </Button>
             </StackPanel>
 
         </StackPanel>
