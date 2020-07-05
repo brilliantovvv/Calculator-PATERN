@@ -16,6 +16,9 @@
     <Window.DataContext>
         <vm:MainViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <cmd:CloseApplicationCommand x:Key="CAC"/>
+    </Window.Resources>
 
 
     <Grid>
@@ -49,11 +52,13 @@
                 <!--<Button Content="ВЫХОД" Command="{Binding Path=ClosseAppCommand}" />-->
                 
                 <!--вариант реализации через отдельный класс-->
-                <Button Content="ВЫХОД">
+                <!--<Button Content="ВЫХОД">
                     <Button.Command>
                         <cmd:CloseApplicationCommand/>
                     </Button.Command>
-                </Button>
+                </Button>-->
+                <!--ЛУЧШИЙ вариант реализации вызова команды через отдельный класс-->
+                <Button Content="ВЫХОД" Command="{StaticResource ResourceKey=CAC}" />
             </StackPanel>
 
         </StackPanel>
