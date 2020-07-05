@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 namespace Calculator_PATERN.Infrastructure.Commands
 {
     // Наследуюемся от базового класса команд
-   abstract class Command : BaseCommand
+   class LCommand : BaseCommand
     {
         // поля РЕДОНЛИ немного ускоряют процесс
         private readonly  Action<object> _Execute;
         private readonly Func<object,bool> _CanExecute;
 
-        public Command(Action<object> Execote, Func<object,bool> CanExecute=null)
+        public LCommand(Action<object> Execote, Func<object,bool> CanExecute=null)
         {
             // добавили выброс исключения
             _Execute = Execote ?? throw new ArgumentNullException(nameof(Execote));

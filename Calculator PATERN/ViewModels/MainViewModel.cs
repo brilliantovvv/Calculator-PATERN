@@ -1,4 +1,6 @@
-﻿using Calculator_PATERN.ViewModels.Base;
+﻿using Calculator_PATERN.Infrastructure.Commands;
+using Calculator_PATERN.ViewModels.Base;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Calculator_PATERN.ViewModels
@@ -47,6 +49,9 @@ namespace Calculator_PATERN.ViewModels
             }
         }
 
+        #endregion
+
+        #region Calculator КОМАНДЫ модели V1
         public ICommand Sum
         {
             get
@@ -111,7 +116,23 @@ namespace Calculator_PATERN.ViewModels
 
         #endregion
 
+        #region КОМАНДЫ модели V2 (пример)
 
+        public ICommand ClosseAppCommand { get; }
+
+        private bool CanCloseApplicationCommandExecute(object p) => true;
+
+        private void OnCloseApplicationCommandExeceted(object p)
+        {
+            Application.Current.Shutdown();
+        }
+
+        public MainViewModel()
+        {
+            ClosseAppCommand = new LCommand(OnCloseApplicationCommandExeceted, CanCloseApplicationCommandExecute);
+        }
+
+        #endregion
 
 
     }
