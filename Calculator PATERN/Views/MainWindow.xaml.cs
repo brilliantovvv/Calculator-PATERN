@@ -11,7 +11,6 @@ namespace Calculator_PATERN
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
         }
 
         //private void Button_Click_Sum(object sender, RoutedEventArgs e)
