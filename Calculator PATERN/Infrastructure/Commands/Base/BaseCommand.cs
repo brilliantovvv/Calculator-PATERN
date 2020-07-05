@@ -7,6 +7,7 @@ using System.Windows.Input;
 
 namespace Calculator_PATERN.Infrastructure.Commands.Base
 {
+    // Создаем базовый класс команд
     internal abstract class BaseCommand : ICommand
     {
         public event EventHandler CanExecuteChanged

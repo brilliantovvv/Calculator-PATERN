@@ -7,24 +7,26 @@ using System.Threading.Tasks;
 
 namespace Calculator_PATERN.Infrastructure.Commands
 {
-    class Command : BaseCommand
+    // Наследуюемся от базового класса команд
+   abstract class Command : BaseCommand
     {
-        private  Action<object> _Execute;
-        private Func<object,bool> _CanExecute;
+        // поля РЕДОНЛИ немного ускоряют процесс
+        private readonly  Action<object> _Execute;
+        private readonly Func<object,bool> _CanExecute;
 
         public Command(Action<object> Execote, Func<object,bool> CanExecute=null)
         {
-            _Execute = Execote;
+            // добавили выброс исключения
+            _Execute = Execote ?? throw new ArgumentNullException(nameof(Execote));
             _CanExecute = CanExecute;
         }
+        // переписали с лямбдой
         public override bool CanExecute(object parameter)
-        {
-          return  _CanExecute == null || _CanExecute(parameter);
-        }
+            => _CanExecute == null || _CanExecute(parameter);
 
-        public override void Execute(object parameter)
-        {
-          return _Execute(parameter);
-        }
+        // переписали с лямбдой
+        public override void Execute(object parameter) 
+            =>_Execute(parameter);
+        
     }
 }
