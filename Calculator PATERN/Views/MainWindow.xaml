@@ -6,9 +6,9 @@
         xmlns:vm="clr-namespace:Calculator_PATERN.ViewModels"
         mc:Ignorable="d"
         Title="Калькулятор" 
-        Height="250" 
-        MaxHeight="250"
-        MinHeight="250"
+        Height="270" 
+        MaxHeight="270"
+        MinHeight="270"
         Width="300"
         MaxWidth="300"
         MinWidth="300">
@@ -44,6 +44,8 @@
                 <TextBlock Text="Рассчитать"/>
                 <Button Content="Сумма" Command="{Binding Sum}" />
                 <Button Content="Вычитание" Command="{Binding Subtraction}" />
+                <!--вариант кнопки выхода стандартный-->
+                <Button Content="ВЫХОД" Command="{Binding Path=ClosseAppCommand}" />
             </StackPanel>
 
         </StackPanel>
