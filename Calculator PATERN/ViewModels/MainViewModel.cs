@@ -34,6 +34,17 @@ namespace Calculator_PATERN.ViewModels
             }
         }
 
+        protected virtual bool Set <T> (ref T field, T value, [CallerMemberName] string prop= null)
+        {
+            if (Equals(field,value))
+            {
+                return false;
+            }
+            field = value;
+            OnPropertyChanged(prop);
+            return true;
+        }
+
         private int _ValueB;
         public int ValueB
         {

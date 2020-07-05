@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Calculator_PATERN.ViewModels"
         mc:Ignorable="d"
         Title="Калькулятор" 
         Height="250" 
@@ -11,6 +12,9 @@
         Width="300"
         MaxWidth="300"
         MinWidth="300">
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
 
 
     <Grid>
@@ -18,7 +22,7 @@
             <TextBlock Text="Калькулятор"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
                     <TextBlock Text="A" Width="12"  />
-                    <TextBox Text="{Binding ValueA}" Width="120" />
+                <TextBox Text="{Binding Path=ValueA}" Width="120" />
                     <Button Command="{Binding A1Plus}" Content="+" Width="25" />
                     <Button Command="{Binding A1Minus}" Content="-" Width="25" />
             </StackPanel>
