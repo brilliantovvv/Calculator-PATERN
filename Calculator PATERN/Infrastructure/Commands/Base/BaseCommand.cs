@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Calculator_PATERN.Infrastructure.Commands.Base
 {
-    internal abstract class Command : ICommand
+    internal abstract class BaseCommand : ICommand
     {
         public event EventHandler CanExecuteChanged
         {
@@ -16,8 +16,6 @@ namespace Calculator_PATERN.Infrastructure.Commands.Base
         }
 
         public abstract bool CanExecute(object parameter);
-
-
         public abstract void Execute(object parameter);
     }
 }
