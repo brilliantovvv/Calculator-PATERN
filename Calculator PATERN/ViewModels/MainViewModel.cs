@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Calculator_PATERN.ViewModels
 {
-    internal class MainViewModel : BaseViewModel
+    public class MainViewModel : BaseViewModel
     {
 
 

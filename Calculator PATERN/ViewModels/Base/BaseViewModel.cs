@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 namespace Calculator_PATERN.ViewModels.Base
 {
    
-    internal abstract class BaseViewModel : INotifyPropertyChanged , IDisposable
+    public abstract class BaseViewModel : INotifyPropertyChanged , IDisposable
     {
         // сообщает клиенту об изменениях свойств
         public event PropertyChangedEventHandler PropertyChanged;
