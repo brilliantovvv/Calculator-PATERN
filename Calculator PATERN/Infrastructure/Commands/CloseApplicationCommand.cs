@@ -8,7 +8,7 @@ using System.Windows;
 
 namespace Calculator_PATERN.Infrastructure.Commands
 {
-    class CloseApplicationCommand : BaseCommand
+   internal class CloseApplicationCommand : BaseCommand
     {
         public override bool CanExecute(object parameter)
         {

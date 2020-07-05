@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Calculator_PATERN.ViewModels"
+        xmlns:cmd="clr-namespace:Calculator_PATERN.Infrastructure.Commands"
         mc:Ignorable="d"
         Title="Калькулятор" 
         Height="270" 
@@ -45,7 +46,14 @@
                 <Button Content="Сумма" Command="{Binding Sum}" />
                 <Button Content="Вычитание" Command="{Binding Subtraction}" />
                 <!--вариант кнопки выхода стандартный-->
-                <Button Content="ВЫХОД" Command="{Binding Path=ClosseAppCommand}" />
+                <!--<Button Content="ВЫХОД" Command="{Binding Path=ClosseAppCommand}" />-->
+                
+                <!--вариант реализации через отдельный класс-->
+                <Button Content="ВЫХОД">
+                    <Button.Command>
+                        <cmd:CloseApplicationCommand/>
+                    </Button.Command>
+                </Button>
             </StackPanel>
 
         </StackPanel>
