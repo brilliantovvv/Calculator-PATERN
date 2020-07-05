@@ -9,9 +9,9 @@
         
 
         Title="Калькулятор" 
-        Height="270" 
-        MaxHeight="270"
-        MinHeight="270"
+        Height="370" 
+        MaxHeight="370"
+        MinHeight="370"
         Width="300"
         MaxWidth="300"
         MinWidth="300">
@@ -33,14 +33,14 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
                 <TextBlock Text="A" Width="12"  />
                 <TextBox Text="{Binding Path=ValueA}" Width="120" />
-                <Button Command="{Binding A1Plus}" Content="+" Width="25" />
-                <Button Command="{Binding A1Minus}" Content="-" Width="25" />
+                <Button Command="{Binding A1Plus}" Content="+" Width="40" />
+                <Button Command="{Binding A1Minus}" Content="-" Width="40" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="5">
                 <TextBlock Text="B" Width="12"  />
                 <TextBox Text="{Binding ValueB}" Width="120" />
-                <Button Command="{Binding B1Plus}" Content="+" Width="25" />
-                <Button Command="{Binding B1Minus}" Content="-" Width="25" />
+                <Button Command="{Binding B1Plus}" Content="+" Width="40" />
+                <Button Command="{Binding B1Minus}" Content="-" Width="40" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
                 <TextBlock Text="Результат" Width="55"  />
