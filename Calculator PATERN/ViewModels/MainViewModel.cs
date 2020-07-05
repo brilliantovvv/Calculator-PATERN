@@ -7,9 +7,10 @@ namespace Calculator_PATERN.ViewModels
     {
 
 
-        #region Calculator
+        #region Calculator свойства модели
 
         private int _ValueA;
+        /// <summary>Свойства переменной "А"</summary>
         public int ValueA
         {
             get { return _ValueA; }

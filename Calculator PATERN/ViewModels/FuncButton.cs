@@ -3,6 +3,7 @@ using System.Windows.Input;
 
 namespace Calculator_PATERN.ViewModels
 {
+    // Конструкция реализации для функции кнопок
     class FuncButton : ICommand
 
     {
