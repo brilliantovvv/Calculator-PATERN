@@ -1,10 +1,11 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace Calculator_PATERN.ViewModels.Base
 {
    
-    internal abstract class BaseViewModel : INotifyPropertyChanged
+    internal abstract class BaseViewModel : INotifyPropertyChanged , IDisposable
     {
         // сообщает клиенту об изменениях свойств
         public event PropertyChangedEventHandler PropertyChanged;
@@ -23,6 +24,29 @@ namespace Calculator_PATERN.ViewModels.Base
             field = value;
             OnPropertyChanged(prop);
             return true;
+        }
+
+        // Деструктор
+        ~BaseViewModel()
+        {
+            Dispose(false);
+        }
+
+        // Освобождение управляемых ресурсов
+        public void Dispose()
+        {
+            Dispose(true);
+        }
+
+        private bool _Disposing;
+        protected virtual void Dispose(bool Disposing)
+        {
+            if (!Disposing || _Disposing )
+            {
+                return;
+            }
+            _Disposing = true;
+            // Освобождение управляемых ресурсов
         }
     }
 }
